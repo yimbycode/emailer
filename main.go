@@ -1,4 +1,4 @@
-// multi-emailer is a tool for sending many emails at once.
+// emailer is a tool for sending many emails at once.
 //
 // They'll be sent from your personal Gmail account, and the recipient's name
 // will be attached to the top of each email, so it looks like you hand wrote it
@@ -32,8 +32,8 @@ import (
 	log "github.com/inconshreveable/log15"
 	google "github.com/kevinburke/google-oauth-handler"
 	"github.com/kevinburke/handlers"
-	"github.com/kevinburke/multi-emailer/assets"
 	"github.com/kevinburke/rest"
+	"github.com/yimbycode/emailer/assets"
 	gmail "google.golang.org/api/gmail/v1"
 	yaml "gopkg.in/yaml.v2"
 )
@@ -445,7 +445,7 @@ func commonMain() (*FileConfig, http.Handler) {
 		mux = handlers.RedirectProto(mux)
 		mux = handlers.STS(mux)
 	}
-	mux = handlers.Server(mux, "multi-emailer/"+Version)
+	mux = handlers.Server(mux, "emailer/"+Version)
 	mux = handlers.Debug(mux)
 	mux = handlers.Log(mux)
 	mux = handlers.Duration(mux)

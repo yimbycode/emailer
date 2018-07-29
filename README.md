@@ -1,4 +1,4 @@
-# multi-emailer
+# emailer
 
 This is a tool for sending out multiple "personal" emails at the same time.
 They'll be sent from your personal Gmail account, and the recipient's name will
@@ -11,7 +11,7 @@ Here's a screenshot:
 
 ## Installation
 
-- Download the right `multi-emailer` binary for your platform from [the releases
+- Download the right `emailer` binary for your platform from [the releases
 page][releases], and copy it to the server.
 
 - Rename `config.sample.yml` to `config.yml` and populate it with values that
@@ -51,7 +51,7 @@ message. Here is an example:
               opening_line: Commissioner Moore
     ```
 
-- Start the server: `multi-emailer --config=/path/to/config.yml`. That's it!
+- Start the server: `emailer --config=/path/to/config.yml`. That's it!
 Logs are sent to stderr and can be redirected from there.
 
 #### Deploying to Google Cloud
@@ -63,11 +63,11 @@ Run `./bin/gae-deploy`. Google Cloud has trouble with the `vendor` directory.
 You can download and install the binary directly:
 
 ```bash
-curl --silent --location --output /usr/local/bin/multi-emailer https://github.com/kevinburke/multi-emailer/releases/download/1.7/multi-emailer-linux-amd64
-chmod 755 /usr/local/bin/multi-emailer
+curl --silent --location --output /usr/local/bin/emailer https://github.com/yimbycode/emailer/releases/download/1.7/emailer-linux-amd64
+chmod 755 /usr/local/bin/emailer
 ```
 
-Then run `/usr/local/bin/multi-emailer` in a directory with the config file and
+Then run `/usr/local/bin/emailer` in a directory with the config file and
 the server should start as you expect.
 
 You'll probably need to tweak the project to deploy to Heroku or elsewhere. I'd
@@ -80,4 +80,4 @@ When users visit the site they'll be redirected to a Google approval page. This
 page will ask them for permission to send emails on their behalf. Then they'll
 be redirected and can type away!
 
-[releases]: https://github.com/kevinburke/multi-emailer/releases
+[releases]: https://github.com/yimbycode/emailer/releases

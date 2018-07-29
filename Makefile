@@ -37,28 +37,28 @@ lint: $(MEGACHECK)
 test: lint
 	go list ./... | grep -v vendor | xargs go test
 
-check: $(GOPATH)/bin/multi-emailer
+check: $(GOPATH)/bin/emailer
 ifndef config
 	$(eval config = config.yml)
 endif
-	multi-emailer --check --config=$(config)
+	$(GOPATH)/bin/emailer --check --config=$(config)
 
 race-test: lint
 	go list ./... | grep -v vendor | xargs go test -race
 
-$(GOPATH)/bin/multi-emailer: $(GO_FILES) | $(GOPATH)/bin
+$(GOPATH)/bin/emailer: $(GO_FILES) | $(GOPATH)/bin
 	go install .
 
-serve: $(GOPATH)/bin/multi-emailer
+serve: $(GOPATH)/bin/emailer
 ifndef config
 	$(eval config = config.yml)
 endif
-	$(GOPATH)/bin/multi-emailer --config=$(config)
+	$(GOPATH)/bin/emailer --config=$(config)
 
-serve-local: | $(GOPATH)/bin/multi-emailer
+serve-local: | $(GOPATH)/bin/emailer
 	$(MAKE) serve config=local.yml
 
-watch-local: | $(GOPATH)/bin/multi-emailer leaf.key leaf.pem
+watch-local: | $(GOPATH)/bin/emailer leaf.key leaf.pem
 	$(MAKE) watch config=local.yml
 
 leaf.key:
@@ -119,11 +119,11 @@ endif
 	$(BUMP_VERSION) --version=$(version) main.go
 	git push origin --tags
 	mkdir -p releases/$(version)
-	GOOS=linux GOARCH=amd64 go build -o releases/$(version)/multi-emailer-linux-amd64 .
-	GOOS=darwin GOARCH=amd64 go build -o releases/$(version)/multi-emailer-darwin-amd64 .
-	GOOS=windows GOARCH=amd64 go build -o releases/$(version)/multi-emailer-windows-amd64 .
+	GOOS=linux GOARCH=amd64 go build -o releases/$(version)/emailer-linux-amd64 .
+	GOOS=darwin GOARCH=amd64 go build -o releases/$(version)/emailer-darwin-amd64 .
+	GOOS=windows GOARCH=amd64 go build -o releases/$(version)/emailer-windows-amd64 .
 	# these commands are not idempotent so ignore failures if an upload repeats
-	$(RELEASE) release --user kevinburke --repo multi-emailer --tag $(version) || true
-	$(RELEASE) upload --user kevinburke --repo multi-emailer --tag $(version) --name multi-emailer-linux-amd64 --file releases/$(version)/multi-emailer-linux-amd64 || true
-	$(RELEASE) upload --user kevinburke --repo multi-emailer --tag $(version) --name multi-emailer-darwin-amd64 --file releases/$(version)/multi-emailer-darwin-amd64 || true
-	$(RELEASE) upload --user kevinburke --repo multi-emailer --tag $(version) --name multi-emailer-windows-amd64 --file releases/$(version)/multi-emailer-windows-amd64 || true
+	$(RELEASE) release --user yimbycode --repo emailer --tag $(version) || true
+	$(RELEASE) upload --user yimbycode --repo emailer --tag $(version) --name multi-emailer-linux-amd64 --file releases/$(version)/emailer-linux-amd64 || true
+	$(RELEASE) upload --user yimbycode --repo emailer --tag $(version) --name multi-emailer-darwin-amd64 --file releases/$(version)/emailer-darwin-amd64 || true
+	$(RELEASE) upload --user yimbycode --repo emailer --tag $(version) --name multi-emailer-windows-amd64 --file releases/$(version)/emailer-windows-amd64 || true

@@ -27,4 +27,4 @@ emails are never read by anyone, or logged.
 Go [back to the homepage](/).
 
 [remove-access]: https://webapps.stackexchange.com/questions/30841/how-do-i-remove-permission-from-an-app-that-i-gave-google-oauth-access-to
-[code]: https://github.com/kevinburke/multi-emailer
+[code]: https://github.com/yimbycode/emailer
