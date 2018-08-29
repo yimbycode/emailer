@@ -1,6 +1,5 @@
 config.yml
 releases
-app.yaml
 /*.pem
 /*.key
 /*.crt

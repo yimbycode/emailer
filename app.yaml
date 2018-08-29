@@ -1,0 +1,10 @@
+api_version: go1
+env: standard
+runtime: go
+
+handlers:
+- url: /.*
+  script: _go_app
+
+skip_files:
+    - vendor/(.+)
