@@ -317,7 +317,7 @@ func validID(id string) bool {
 }
 
 func loadConfig(filename string) (*FileConfig, error) {
-	data, err := ioutil.ReadFile(*cfg)
+	data, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}
