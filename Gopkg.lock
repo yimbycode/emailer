@@ -78,11 +78,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:f9e9e525a27d706188202ba68368992045e323f5ef225536b54715d10ed40b07"
+  digest = "1:696d670dc1768c81e60e30fe758de6db1546f82e17391de50e0f2a53e6c1e2dd"
   name = "github.com/kevinburke/semaphore"
   packages = ["."]
   pruneopts = "UT"
-  revision = "8b4e8dc01d0f76c50601c31d4df7bbca1d7322b3"
+  revision = "5c0f24b0593d38f84f84df633ed1c22fde3f3e91"
 
 [[projects]]
   digest = "1:c658e84ad3916da105a761660dcaeb01e63416c8ec7bc62256a9b411a05fcd67"
@@ -118,7 +118,15 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:659ba9cdd7d5b818ff2454caa926f65ad1fedcc7e2f40cfbe374386417e840fe"
+  digest = "1:1cf35807a980ab786b40292a5903f8ca71bd345372716b535beab5f03275da08"
+  name = "github.com/yimbycode/emailer"
+  packages = ["assets"]
+  pruneopts = "UT"
+  revision = "7c23985c008fd77bcfbaec518e5a8298f492e59c"
+
+[[projects]]
+  branch = "master"
+  digest = "1:a68068595227881a09dd5961976ddf705c8eea822dcd1c7b57bbb0067335ad32"
   name = "golang.org/x/crypto"
   packages = [
     "internal/subtle",
@@ -131,7 +139,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:ce1f391e0e8c5e3c635dc2c712b037a2d0fd4241cc5648f23ca071565dd385f2"
+  digest = "1:d6b719875cf8091fbab38527d81d34e71f4521b9ee9ccfbd4a32cff2ac5af96e"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -142,7 +150,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:05fcb1ce27666bec824043afa2a11806ebf02aec86a1bc497a8c5372df6a4c09"
+  digest = "1:bea0314c10bd362ab623af4880d853b5bad3b63d0ab9945c47e461b8d04203ed"
   name = "golang.org/x/oauth2"
   packages = [
     ".",
@@ -172,7 +180,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:d939bd02289d5f6d726c2ea07aba46cff357c6096f4add6fb7c42642ca228cae"
+  digest = "1:ab6b907bf0f6a4444a362a4d1aa945d9cbc8d41f356f0e5dcb1bf7cc7b14c44f"
   name = "google.golang.org/api"
   packages = [
     "gensupport",
@@ -184,7 +192,7 @@
   revision = "efcb5f25ac56eae06c8b5672456c0b7767522685"
 
 [[projects]]
-  digest = "1:5e46d626c39f9b4b175a4f6181eb03c0d709044abb3d4a7fc2ac15109ca9c4de"
+  digest = "1:28b8873d0fcea2ea12e20ecbbca408af0111cbf1eda569d7c7e7147d36bad16e"
   name = "google.golang.org/appengine"
   packages = [
     "internal",
@@ -217,6 +225,7 @@
     "github.com/kevinburke/rest",
     "github.com/kevinburke/semaphore",
     "github.com/russross/blackfriday",
+    "github.com/yimbycode/emailer/assets",
     "golang.org/x/crypto/nacl/secretbox",
     "golang.org/x/sync/errgroup",
     "google.golang.org/api/gmail/v1",
